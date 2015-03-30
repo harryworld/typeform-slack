@@ -1,0 +1,26 @@
+{
+  "name": "typeform-slack",
+  "version": "0.0.1",
+  "description": "Use typeform for registration, and send invitation email in Slack",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:harryworld/typeform-slack.git"
+  },
+  "keywords": [
+    "typeform",
+    "slack",
+    "registration",
+    "invitation",
+    "email"
+  ],
+  "author": "Harry Ng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harryworld/typeform-slack/issues"
+  },
+  "homepage": "https://github.com/harryworld/typeform-slack"
+}
