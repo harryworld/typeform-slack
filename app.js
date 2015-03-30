@@ -45,8 +45,11 @@ var sendSlackInvitation = function(users) {
       _attempts: 1
     };
 
-    request(getSlackInviteUrl(user), function(err, response, body) {
-      if (!err && response.statusCode == 200) {
+    request({
+      url: getSlackInviteUrl(user),
+      json: true
+    }, function(err, response, body) {
+      if (!err && body.ok == true) {
         cubby.set('form-id-since', Math.floor(Date.now() / 1000));
 
         console.log("Invited: " + user.first_name + ", " + user.last_name + " <" + user.email + ">");
