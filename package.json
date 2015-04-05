@@ -4,7 +4,7 @@
   "description": "Use typeform for registration, and send invitation email in Slack",
   "private": true,
   "scripts": {
-    "test": "npm test",
+    "test": "mocha",
     "start": "node ./bin/www"
   },
   "repository": {
@@ -19,7 +19,7 @@
     "email"
   ],
   "author": "Harry Ng",
-  "license": "MIT",
+  "license": "MIT License",
   "bugs": {
     "url": "https://github.com/harryworld/typeform-slack/issues"
   },
@@ -34,5 +34,8 @@
     "serve-favicon": "~2.2.0",
     "cubby": "0.0.3",
     "request": "^2.54.0"
+  },
+  "devDependencies": {
+    "supertest": "^0.15.0"
   }
 }
