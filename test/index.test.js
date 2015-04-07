@@ -14,6 +14,11 @@ describe('Index Page', function() {
       .expect(/Welcome to HKStartups Slack Group/, done);
   });
 
+  it("should redirect to login page", function(done) {
+    request(app).get('/users')
+      .expect(302, done)
+  })
+
   it("should have logo");
   it("should have a login form");
 });

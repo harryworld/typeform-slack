@@ -4,7 +4,7 @@
   "description": "Use typeform for registration, and send invitation email in Slack",
   "private": true,
   "scripts": {
-    "test": "mocha",
+    "test": "mocha test/**",
     "start": "node ./bin/www"
   },
   "repository": {
@@ -30,13 +30,18 @@
     "cubby": "0.0.3",
     "debug": "~2.1.1",
     "express": "~4.11.1",
+    "express-session": "^1.10.4",
     "jade": "~1.9.1",
     "mongoose": "^4.0.1",
     "morgan": "~1.5.1",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^1.0.0",
     "request": "^2.54.0",
     "serve-favicon": "~2.2.0"
   },
   "devDependencies": {
+    "chai": "^2.2.0",
     "supertest": "^0.15.0"
   }
 }

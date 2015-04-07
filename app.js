@@ -7,10 +7,14 @@ var bodyParser = require('body-parser');
 
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/typeform-slack');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+
 var User     = require('./app/models/user');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var accounts = require('./routes/accounts');
 
 var app = express();
 
@@ -24,10 +28,24 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/api', users);
+app.use('/accounts', accounts);
+
+// passport config
+var Account = require('./app/models/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
