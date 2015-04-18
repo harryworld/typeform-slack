@@ -1,6 +1,6 @@
 # typeform-slack
 
-This is a little tool to automate the process of Slack Invitation
+This tool is being updated, we want to create a tool which can read data from Typeform and send invitation in Slack. This is combined of the plugin as well as a management system on the users signed up.
 
 1. Create a typeform
 2. Get the `formId` and `apiKey`
