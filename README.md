@@ -9,6 +9,10 @@ This tool is being updated, we want to create a tool which can read data from Ty
 5. Fill in the `config` variable accordingly
 6. Done!!
 
+# Command
+
+Run `node invite.js` to execute the invitation manually.
+
 # Reference
 
 Inspired by: https://levels.io/slack-typeform-auto-invite-sign-ups/
